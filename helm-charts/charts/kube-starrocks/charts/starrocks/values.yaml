@@ -70,7 +70,20 @@ metrics:
     enabled: false
     # Prometheus ServiceMonitor labels
     labels: {}
-      # scraper: prometheus-operator
+    # Whether to enable basic auth
+    basicAuth:
+      enabled: false
+      # The name of the secret that contains the username for basic auth.
+      # The secret should contain a key named "username".
+      usernameSecretName: ""
+      # The key in the secret that contains the username for basic auth.
+      usernameSecretKey: ""
+      # The name of the secret that contains the password for basic auth.
+      # The secret should contain a key named "password".
+      passwordSecretName: ""
+      # The key in the secret that contains the password for basic auth.
+      passwordSecretKey: ""
+    # scraper: prometheus-operator
     # Prometheus ServiceMonitor interval
     interval: 15s
 
